@@ -60,7 +60,7 @@ export function CommandLegend() {
           {/* Home Button */}
           <button
             onClick={() => setCurrentTab("s")}
-            className={`flex items-center gap-2 transition-colors hover:text-primary ${
+            className={`flex cursor-pointer items-center gap-2 transition-colors hover:text-primary ${
               currentTab === "s"
                 ? "font-semibold text-primary"
                 : "text-muted-foreground"
@@ -102,7 +102,7 @@ export function CommandLegend() {
                     }
                   }}
                   title={`${label} (Press ${key})`}
-                  className={`flex items-center gap-2 transition-colors hover:text-primary ${
+                  className={`flex cursor-pointer items-center gap-2 transition-colors hover:text-primary ${
                     isActive
                       ? "font-semibold text-primary"
                       : "text-muted-foreground"
@@ -131,7 +131,7 @@ export function CommandLegend() {
                 <button
                   key={colorScheme.name}
                   onClick={() => setBrandColor(colorScheme.name)}
-                  className={`group relative flex h-8 items-center gap-1.5 rounded px-2 transition-all hover:scale-105 ${
+                  className={`group relative flex h-8 cursor-pointer items-center gap-1.5 rounded px-2 transition-all hover:scale-105 ${
                     brandColor === colorScheme.name
                       ? "ring-2 ring-primary ring-offset-2 ring-offset-background"
                       : ""
@@ -164,7 +164,7 @@ export function CommandLegend() {
             <div className="relative" ref={fontMenuRef}>
               <button
                 onClick={() => setShowFontMenu(!showFontMenu)}
-                className="rounded-lg border border-border bg-muted p-2 transition-colors hover:bg-muted/80"
+                className="cursor-pointer rounded-lg border border-border bg-muted p-2 transition-colors hover:bg-muted/80"
                 aria-label="Select font"
                 title="Change font"
               >
@@ -186,7 +186,7 @@ export function CommandLegend() {
                           setFontFamily(font.name)
                           setShowFontMenu(false)
                         }}
-                        className={`w-full px-4 py-2 text-left text-sm transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-accent ${
+                        className={`w-full cursor-pointer px-4 py-2 text-left text-sm transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-accent ${
                           fontFamily === font.name
                             ? "bg-primary font-semibold text-primary-foreground"
                             : ""
@@ -204,7 +204,7 @@ export function CommandLegend() {
             {/* Dark/Light Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="rounded-lg border border-border bg-muted p-2 transition-colors hover:bg-muted/80"
+              className="cursor-pointer rounded-lg border border-border bg-muted p-2 transition-colors hover:bg-muted/80"
               aria-label="Toggle theme"
               title={`Toggle ${theme === "dark" ? "light" : "dark"} mode`}
             >

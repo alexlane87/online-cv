@@ -70,7 +70,7 @@ export function SummaryTab() {
       <div className="mb-8">
         <h1 className="mb-2 text-4xl font-bold tracking-tight">Alex Lane</h1>
         <p className="text-xl font-medium text-primary">
-          Head of Engineering / Solutions Architect
+          Head of Engineering
         </p>
       </div>
 
@@ -153,7 +153,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("l")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -174,7 +174,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("t")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -195,7 +195,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("d")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -216,7 +216,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("a")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -237,7 +237,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("o")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -258,7 +258,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("c")}
           whileHover={hoverLift}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -279,7 +279,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("d")}
           whileHover={{ scale: 1.02, y: -2 }}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -300,7 +300,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("a")}
           whileHover={{ scale: 1.02, y: -2 }}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -321,7 +321,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("o")}
           whileHover={{ scale: 1.02, y: -2 }}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
@@ -342,7 +342,7 @@ export function SummaryTab() {
         <motion.button
           onClick={() => setCurrentTab("c")}
           whileHover={{ scale: 1.02, y: -2 }}
-          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
+          className="group rounded-xl border border-border bg-card p-6 text-left shadow-sm cursor-pointer transition-all hover:border-primary hover:shadow-md"
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">

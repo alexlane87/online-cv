@@ -137,6 +137,16 @@ async function fetchREADME(): Promise<string> {
 Error: Could not load CV content. Please try again.`
 }
 
+// Helper to clean markdown formatting for plain text export
+function cleanMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "$1") // Remove bold markers
+    .replace(/\*(.*?)\*/g, "$1") // Remove italic markers
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Remove links, keep text
+    .replace(/`(.*?)`/g, "$1") // Remove code markers
+    .trim()
+}
+
 // Parse README markdown into structured sections
 interface CVSection {
   title: string
@@ -198,13 +208,13 @@ function parseREADME(markdown: string): CVSection[] {
         items: [],
       }
     }
-    // List items
+    // List items (convert * to • for display)
     else if (line.startsWith("* ") || line.startsWith("- ")) {
-      const content = line.substring(2)
+      const content = line.substring(2).trim()
       if (currentSubsection) {
         currentSubsection.items.push(content)
       } else if (currentSection) {
-        currentSection.content.push(content)
+        currentSection.content.push(`• ${content}`)
       }
     }
     // Regular content
@@ -278,8 +288,7 @@ async function generateDOCXContent(): Promise<Paragraph[]> {
 
     // Regular content
     section.content.forEach((content) => {
-      // Remove markdown formatting
-      const cleanContent = content.replace(/\*\*/g, "").replace(/\*/g, "")
+      const cleanContent = cleanMarkdown(content)
       paragraphs.push(
         new Paragraph({
           children: [createTextRun(cleanContent)],
@@ -306,9 +315,7 @@ async function generateDOCXContent(): Promise<Paragraph[]> {
           )
         }
         sub.items.forEach((item) => {
-          const cleanItem = item
-            .replace(/\*\*.*?\*\*/g, (match) => match.replace(/\*\*/g, ""))
-            .replace(/\*/g, "")
+          const cleanItem = cleanMarkdown(item)
           paragraphs.push(
             new Paragraph({
               children: [createTextRun(`• ${cleanItem}`)],
@@ -366,7 +373,7 @@ export function ExportModal() {
                 {/* Regular content */}
                 {section.content.map((content, i) => (
                   <Text key={i} style={styles.text}>
-                    {content}
+                    {cleanMarkdown(content)}
                   </Text>
                 ))}
 
@@ -385,10 +392,7 @@ export function ExportModal() {
                     )}
                     {sub.items.map((item, itemIdx) => (
                       <Text key={itemIdx} style={styles.bulletPoint}>
-                        •{" "}
-                        {item
-                          .replace(/^\*\*|\*\*$/g, "")
-                          .replace(/\*\*(.*?)\*\*/g, "$1")}
+                        • {cleanMarkdown(item)}
                       </Text>
                     ))}
                   </View>

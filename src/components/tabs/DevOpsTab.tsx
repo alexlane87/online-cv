@@ -157,38 +157,41 @@ export function DevOpsTab() {
       transition={{ duration: 0.3 }}
       className="container mx-auto px-6 py-8"
     >
-      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h1 className="mb-2 text-4xl font-bold">DevOps & Infrastructure</h1>
-          <p className="text-xl text-muted-foreground">
-            Building reliable, scalable, and secure cloud-native platforms
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={() => setViewMode("brief")}
-            title="Brief view (Press ↑)"
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm transition-all ${
-              viewMode === "brief"
-                ? "bg-primary text-primary-foreground shadow-lg"
-                : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary hover:shadow-md"
-            }`}
-          >
-            <ArrowUp size={16} />
-            Brief
-          </button>
-          <button
-            onClick={() => setViewMode("detailed")}
-            title="Detailed view (Press ↓)"
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm transition-all ${
-              viewMode === "detailed"
-                ? "bg-primary text-primary-foreground shadow-lg"
-                : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary hover:shadow-md"
-            }`}
-          >
-            <ArrowDown size={16} />
-            Detailed
-          </button>
+      {/* Sticky Header */}
+      <div className="sticky top-16 z-10 -mx-6 mb-8 border-b border-border bg-background/95 px-6 py-4 backdrop-blur-sm">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h1 className="mb-2 text-4xl font-bold">DevOps & Infrastructure</h1>
+            <p className="text-xl text-muted-foreground">
+              Building reliable, scalable, and secure cloud-native platforms
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setViewMode("brief")}
+              title="Brief view (Press ↑)"
+              className={`flex items-center gap-2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all ${
+                viewMode === "brief"
+                  ? "bg-primary text-primary-foreground shadow-lg"
+                  : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary hover:shadow-md"
+              }`}
+            >
+              <ArrowUp size={16} />
+              Brief
+            </button>
+            <button
+              onClick={() => setViewMode("detailed")}
+              title="Detailed view (Press ↓)"
+              className={`flex items-center gap-2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all ${
+                viewMode === "detailed"
+                  ? "bg-primary text-primary-foreground shadow-lg"
+                  : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary hover:shadow-md"
+              }`}
+            >
+              <ArrowDown size={16} />
+              Detailed
+            </button>
+          </div>
         </div>
       </div>
 

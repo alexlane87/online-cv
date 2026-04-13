@@ -211,7 +211,17 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem("theme")
-    return (saved as Theme) || "light"
+    if (saved) {
+      return saved as Theme
+    }
+    // Detect system preference on first load
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark"
+    }
+    return "light"
   })
 
   const [brandColor, setBrandColorState] = useState<BrandColor>(() => {
